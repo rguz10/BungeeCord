@@ -32,14 +32,7 @@ public class CommandList extends Command
                 continue;
             }
 
-            List<String> players = new ArrayList<>();
-            for ( ProxiedPlayer player : server.getPlayers() )
-            {
-                players.add( player.getDisplayName() );
-            }
-            Collections.sort( players, String.CASE_INSENSITIVE_ORDER );
-
-            sender.sendMessage( ProxyServer.getInstance().getTranslation( "command_list", server.getName(), server.getPlayers().size(), Util.format( players, ChatColor.RESET + ", " ) ) );
+            sender.sendMessage( ProxyServer.getInstance().getTranslation( "command_list", server.getName(), server.getPlayers().size() ) );
         }
 
         sender.sendMessage( ProxyServer.getInstance().getTranslation( "total_players", ProxyServer.getInstance().getOnlineCount() ) );
